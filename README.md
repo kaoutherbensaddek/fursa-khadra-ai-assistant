@@ -135,3 +135,7 @@ npm start
 ---
 
 **تم إنشاؤه كجزء من مهمة الالتحاق بفريق الذكاء الاصطناعي في منصة "فرص خضراء".**
+
+
+https://github.com/user-attachments/assets/d9077fd8-922b-4c76-9e54-22e93dcbdaba
+
