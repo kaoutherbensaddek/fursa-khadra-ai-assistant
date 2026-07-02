@@ -22,6 +22,8 @@ This is a lightweight RAG pipeline. Can be extended later with semantic embeddin
 
 ## Project structure
 
+```
+
 fursa-chatbot/
 ├── data/                  # for future database files
 ├── public/                # Frontend files (index.html, style.css, script.js)
@@ -32,6 +34,8 @@ fursa-chatbot/
 ├── package-lock.json
 ├── server.js              # Express server + retrieval logic + AI calls
 └── README.md
+```
+
 
 ## Setup
 
