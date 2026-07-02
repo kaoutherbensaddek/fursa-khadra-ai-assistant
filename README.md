@@ -19,12 +19,26 @@ This is a lightweight RAG pipeline. Can be extended later with semantic embeddin
 | Frontend | HTML / CSS / JS |
 | Data | JSON mock data |
 
+
+## Project structure
+
+fursa-chatbot/
+├── data/                  # for future database files
+├── public/                # Frontend files (index.html, style.css, script.js)
+├── .env                   # Hugging Face token (not committed)
+├── .env.example           # Template for environment variables
+├── opportunities.json     # Sample opportunities dataset
+├── package.json
+├── package-lock.json
+├── server.js              # Express server + retrieval logic + AI calls
+└── README.md
+
 ## Setup
 
 Requirements: Node.js 18+, Hugging Face account with a [read token](https://huggingface.co/settings/tokens)
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/kaoutherbensaddek/fursa-khadra-ai-assistant.git
 cd fursa-chatbot
 npm install
 cp .env.example .env
