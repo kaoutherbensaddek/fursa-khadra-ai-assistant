@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فرص خضراء — المساعد الذكي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="30" height="30">
+            <path d="M24 44C24 44 10 34 10 20C10 12 16 6 24 6C32 6 38 12 38 20C38 34 24 44 24 44Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M24 44V20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 26C24 26 16 24 16 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        <div class="brand__text">
+          <h1>فرص خضراء</h1>
+          <p>المساعد الذكي للفرص والمنح</p>
+        </div>
+      </div>
+      <span class="status" id="status">● جاهز للمساعدة</span>
+    </header>
+
+    <main class="chat" id="chat">
+      <div class="msg msg--bot">
+        <div class="msg__bubble">
+          أهلاً بك 👋 أنا مساعد فرص خضراء. اسألني مثلاً:
+          <br />"أريد منحة لدراسة الطاقة المتجددة في أوروبا"
+        </div>
+      </div>
+    </main>
+
+    <form class="composer" id="composer">
+      <input
+        type="text"
+        id="input"
+        placeholder="اكتب سؤالك عن الفرص والمنح..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="sendBtn" aria-label="إرسال">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+          <path d="M4 12L20 4L13 20L11 13L4 12Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

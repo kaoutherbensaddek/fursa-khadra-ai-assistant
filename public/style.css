@@ -1,0 +1,240 @@
+:root {
+  --forest: #14351f;
+  --sprout: #4c9a5b;
+  --sprout-light: #7ec48a;
+  --parchment: #f6f2e9;
+  --ink: #22241f;
+  --amber: #d8a24a;
+  --bubble-bot: #ffffff;
+  --bubble-user: #e9f3ea;
+  --radius-lg: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: var(--parchment);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(76, 154, 91, 0.08), transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(216, 162, 74, 0.08), transparent 40%);
+  font-family: "Almarai", sans-serif;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--parchment);
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 5vw;
+  background: var(--forest);
+  color: var(--parchment);
+  border-bottom: 3px solid var(--amber);
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__mark {
+  color: var(--sprout-light);
+  display: inline-flex;
+}
+
+.brand__text h1 {
+  font-family: "Tajawal", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brand__text p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: rgba(246, 242, 233, 0.75);
+}
+
+.status {
+  font-size: 12px;
+  color: var(--sprout-light);
+  white-space: nowrap;
+}
+
+.chat {
+  flex: 1;
+  padding: 28px 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.msg {
+  display: flex;
+  max-width: min(85%, 780px);
+}
+
+.msg--bot {
+  align-self: flex-start;
+}
+
+.msg--user {
+  align-self: flex-end;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.msg__bubble {
+  padding: 13px 17px;
+  line-height: 1.65;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(20, 53, 31, 0.06);
+}
+
+.msg--bot .msg__bubble {
+  background: var(--bubble-bot);
+  border-radius: 4px var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  border: 1px solid rgba(20, 53, 31, 0.08);
+}
+
+.msg--user .msg__bubble {
+  background: var(--sprout);
+  color: #fff;
+  border-radius: var(--radius-lg) 4px var(--radius-lg) var(--radius-lg);
+}
+
+.sources {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(20, 53, 31, 0.15);
+  font-size: 13px;
+}
+
+.sources a {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--amber);
+}
+
+.sources__item {
+  margin-bottom: 4px;
+}
+
+.typing {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sprout);
+  animation: sprout-pulse 1s infinite ease-in-out;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.15s; }
+.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes sprout-pulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 5vw 22px;
+  background: var(--parchment);
+  border-top: 1px solid rgba(20, 53, 31, 0.1);
+  flex-shrink: 0;
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.composer input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(20, 53, 31, 0.15);
+  background: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.composer input:focus {
+  border-color: var(--sprout);
+}
+
+.composer button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--forest);
+  color: var(--sprout-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  transform: scaleX(-1); /* arrow points correctly in RTL */
+}
+
+.composer button:hover {
+  background: var(--sprout);
+  color: #fff;
+}
+
+.composer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing span {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .app__header {
+    padding: 16px 16px;
+  }
+  .chat {
+    padding: 18px 14px;
+  }
+  .composer {
+    padding: 14px 14px 18px;
+  }
+  .msg {
+    max-width: 88%;
+  }
+}

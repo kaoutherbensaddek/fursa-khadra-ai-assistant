@@ -1,64 +1,16 @@
-# Fursa Khadra AI Assistant 🌱المساعد الذكي لمنصة فرص خضراء
+# 🌱 المساعد الذكي لمنصة "فرص خضراء" (Fursa Khadra AI Assistant)
 
-AI chatbot that answers questions about scholarships, training programs, and hackathons on the Fursa Khadra platform. Users ask in natural language and get answers grounded in real data — no fake opportunities.
-
-## How it works
-
-1. **Retrieval**: keyword matching finds the top 5 relevant opportunities from `data/opportunities.json`
-2. **Generation**: those opportunities get sent to Hugging Face Inference API (default: `zephyr-7b-beta`) as context
-3. **Response**: the model answers based only on that context, with source links for verification
-
-This is a lightweight RAG pipeline. Can be extended later with semantic embeddings.
-
-## Tech stack
-
-| Layer | Technology |
-|-------|------------|
-| Backend | Node.js + Express |
-| AI | Hugging Face Inference API |
-| Frontend | HTML / CSS / JS |
-| Data | JSON mock data |
-
-
-## Project structure
-
-```
-
-fursa-chatbot/
-├── data/                  # for future database files
-├── public/                # Frontend files (index.html, style.css, script.js)
-├── .env                   # Hugging Face token (not committed)
-├── .env.example           # Template for environment variables
-├── opportunities.json     # Sample opportunities dataset
-├── package.json
-├── package-lock.json
-├── server.js              # Express server + retrieval logic + AI calls
-└── README.md
-```
-
-
-## Setup
-
-Requirements: Node.js 18+, Hugging Face account with a [read token](https://huggingface.co/settings/tokens)
-
-```bash
-git clone https://github.com/kaoutherbensaddek/fursa-khadra-ai-assistant.git
-cd fursa-chatbot
-npm install
-cp .env.example .env
-# add your HF_TOKEN to .env
-npm start
-```
+مشروع مقدَّم لمهمة فريق الذكاء الاصطناعي — **الفكرة الثانية: مساعد ذكي (AI Chatbot)**.
 
 شات بوت يجيب على أسئلة المستخدمين حول الفرص والمنح المتاحة على منصة "فرص خضراء"، باستخدام نموذج لغوي (LLM) مجاني عبر Hugging Face، مدمج بواجهة ويب بسيطة وخلفية Node.js.
 
 ---
 
-## الفكرة
+## 💡 الفكرة
 
 بدل أن يتصفح المستخدم مئات الفرص يدوياً، يسأل المساعد بلغته الطبيعية (مثلاً: *"أريد منحة لدراسة الطاقة المتجددة في أوروبا"*) فيرد عليه بأقرب الفرص المطابقة مع تفاصيلها ورابط التقديم — دون أن يختلق (hallucinate) فرصاً غير موجودة.
 
-## كيف يعمل النظام (AI Integration)
+## 🧠 كيف يعمل النظام (AI Integration)
 
 هذا ليس مجرد "استدعاء API"، بل خط أنابيب بسيط من نوع **RAG-lite**:
 
@@ -78,7 +30,7 @@ npm start
 | Frontend | HTML / CSS / JavaScript خالص (بدون إطار عمل) |
 | البيانات | JSON تجريبي (Mock Data) |
 
-##  هيكل المشروع
+## 📁 هيكل المشروع
 
 ```
 fursa-chatbot/
@@ -94,7 +46,7 @@ fursa-chatbot/
 └── README.md
 ```
 
-## كيفية التشغيل
+## ▶️ كيفية التشغيل
 
 ### 1. المتطلبات
 - Node.js نسخة 18 أو أحدث.
@@ -120,7 +72,7 @@ npm start
 ```
 ثم افتح المتصفح على: **http://localhost:3000**
 
-> ملاحظة: في المرة الأولى قد يستغرق النموذج بضع ثوانٍ "ليستيقظ" على خوادم Hugging Face المجانية (cold start) - هذا طبيعي.
+> ملاحظة: في المرة الأولى قد يستغرق النموذج بضع ثوانٍ "ليستيقظ" على خوادم Hugging Face المجانية (cold start) — هذا طبيعي.
 
 ## 🧪 أمثلة أسئلة للتجربة
 
@@ -129,6 +81,12 @@ npm start
 - "هل يوجد تدريب مجاني عن بعد في الذكاء الاصطناعي؟"
 - "أبحث عن هاكاثون في مجال البيئة"
 
+## 🔮 تطويرات مستقبلية
+
+- استبدال الاسترجاع بالكلمات المفتاحية بـ embeddings حقيقية (بحث دلالي كامل).
+- ربط قاعدة البيانات الحقيقية للمنصة بدل ملف JSON.
+- إضافة تصنيف/تلخيص تلقائي للفرص الجديدة عند إدخالها (الفكرة الثالثة في المهمة).
+- ذاكرة محادثة دائمة لكل مستخدم (حالياً السجل يُحفظ في الجلسة فقط داخل المتصفح).
 
 ---
 
