@@ -104,7 +104,7 @@ fursa-chatbot/
 
 ### 2. التثبيت
 ```bash
-git clone <رابط-المستودع>
+git clone https://github.com/kaoutherbensaddek/fursa-khadra-ai-assistant.git
 cd fursa-chatbot
 npm install
 ```
